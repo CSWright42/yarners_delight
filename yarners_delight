@@ -1,0 +1,25 @@
+
+--Create yarn store database
+CREATE TABLE yarners_delight (yarn_brand TEXT, yarn_material TEXT, yarn_weight TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO yarners_delight VALUES ("malabrigo", "jet", "lace", 10, 15);
+INSERT INTO yarners_delight VALUES ("malabrigo", "parisnights", "sock", 12, 10);
+INSERT INTO yarners_delight VALUES ("malabrigo", "rojo", "chunky", 8, 20);
+INSERT INTO yarners_delight VALUES ("madelinetosh", "purple haze", "fingerling", 13, 30);
+INSERT INTO yarners_delight VALUES ("madelinetosh", "azure", "DK", 6, 35);
+INSERT INTO yarners_delight VALUES ("madelinetosh", "fuchsia", "CHUNKY", 22, 25);
+INSERT INTO yarners_delight VALUES ("plymouth", "sky", "sport", 20, 6);
+INSERT INTO yarners_delight VALUES ("plymouth", "pumpkin_spice", "DK", 15, 5);
+INSERT INTO yarners_delight VALUES ("plymouth", "forest", "sport", 9, 8);
+INSERT INTO yarners_delight VALUES ("cascade", "blackberry", "lace", 7, 5);
+INSERT INTO yarners_delight VALUES ("cascade", "midnight", "fingerling", 3, 6);
+INSERT INTO yarners_delight VALUES ("cascade", "apricot", "DK", 5, 0);
+INSERT INTO yarners_delight VALUES ("borroco", "peafowl", "chunky", 4, 33);
+INSERT INTO yarners_delight VALUES ("borroco", "frost", "sport", 17, 35);
+INSERT INTO yarners_delight VALUES ("borroco", "breeze", "fingerling", 24, 30);
+
+--display database ordered by price
+SELECT * FROM yarners_delight ORDER BY "price";
+
+--display the quantity of yarn by brand
+SELECT SUM ("quantity") FROM yarners_delight GROUP BY ("yarn_brand");
